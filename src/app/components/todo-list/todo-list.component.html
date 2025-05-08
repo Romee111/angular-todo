@@ -1,0 +1,17 @@
+<!-- src/app/components/todo-list/todo-list.component.html -->
+<ul>
+    <!-- Loop through the todos array and display each todo -->
+    <li *ngFor="let todo of todos$ | async">
+      <!-- Checkbox to toggle the completion status of the todo -->
+      <input 
+        type="checkbox" 
+        [checked]="todo.completed" 
+        (change)="toggle(todo.id)" 
+      />
+      <!-- Display the title of the todo -->
+      {{ todo.title }}
+      <!-- Button to remove the todo -->
+      <button (click)="remove(todo.id)">X</button>
+    </li>
+  </ul>
+  
